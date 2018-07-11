@@ -1,0 +1,30 @@
+{% extends 'Layout/layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Home
+{% endblock %}
+
+{% block content %}
+    <section class="h80vh">
+
+        <p id="ajax"></p>
+        
+        <form class="right hide-on-med-and-down" method="POST" action="search-aliment" id="formSearchAliment">
+            <div class="input-field">
+                <input id="search" type="text" name="search" required>
+                <label class="label-icon" for="search"><i class="material-icons blue-text">search</i></label>
+                <i class="material-icons">close</i>
+            </div>
+        </form>
+
+        {% for test in afficher %}
+
+            <p> {{ test.ALIMENT }} </p>
+
+        {% endfor %}   
+
+   
+    </section>
+    
+
+{% endblock %}
